@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="build/css/styles.css">
+    <script src="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
+    <title>Alarm</title>
+  </head>
+  <body>
+    <a href="weather.html">Click for the weather page...</a>
+
+    <div class="container">
+      <h1>Alarm Clock </h1>
+      <h2 id="time"></h2>
+      <form id="alarm-form">
+        <div class="form-group">
+          <label for="hours">Enter hour</label>
+          <input id="hours" type="number">
+          <div class='error1'></div>
+          <br>
+          <label for="minutes">Enter minute</label>
+          <input id="minutes" type="number">
+          <div class='error2'></div>
+          <br>
+          <label for="seconds">Enter second</label>
+          <input id="seconds" type="number">
+          <div class='error3'></div>
+          <br>
+          <strong>Example: at [hour]:[minute]:[second] alarm will sound</strong>
+          <br>
+          <button class="btn-success" type="submit">Submit</button>
+        </div>
+
+      </form>
+      <h3 id="alarm_output"></h3>
+
+    </div>
+    <div class="container">
+      <div class="alarm">
+      </div>
+    </div>
+
+  </body>
+</html>

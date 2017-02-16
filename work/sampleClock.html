@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Html clock</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.5/moment-timezone-with-data.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+<p id='show_time'></p>
+<p id='show_date'></p>
+<select id='timezone_list'></select>
+    <script type="text/javascript">
+        var list = moment.tz.names();
+        var timezone;
+        var sel = document.getElementById('timezone_list');
+        for(var i = 0; i < list.length; i++) {
+            var opt = document.createElement('option');
+            opt.innerHTML = list[i];
+            opt.value = list[i];
+            sel.appendChild(opt);
+        }
+
+        sel.onchange = function(){
+            timezone=sel.options[sel.selectedIndex].text;
+            console.log(timezone)
+            setInterval(function(){
+                var times = moment().tz(timezone).format('h:mm:ss a');
+                var dates = moment().tz(timezone).format('MMMM Do YYYY');
+                var par = document.getElementById('show_time');
+                var par2 = document.getElementById('show_date');
+                par.innerHTML= times;
+                par2.innerHTML=dates;
+            },1000);
+        }
+    </script>
+</body>
